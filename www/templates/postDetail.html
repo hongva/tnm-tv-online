@@ -1,0 +1,43 @@
+<ion-view>
+	<ion-nav-bar class="bar-positive">
+		<ion-nav-back-button></ion-nav-back-button>
+
+		<ion-nav-buttons side="left">
+			<button class="button button-icon button-clear ion-navicon" menu-toggle="left"></button>
+		</ion-nav-buttons>
+	</ion-nav-bar>
+
+	<ion-header-bar class="bar bar-positive">
+		<div class="title"><center>{{ post_category }} </center></div>
+	</ion-header-bar>
+	<ion-content class="has-header">
+			<img class="full-image" src="{{ post_image }}"/>
+			<div class="item item-body">
+				<h2 style="font-size: 20px; font-family: khmer OS;">{{ post_title }} </h2>
+				<p class="ion-clock" id="date-in-slide-detail"> {{post_date}}</p>
+				<p id="cate-in-slide-detail">{{post_category}}</p>
+				<p ng-bind-html="post_content"></p>
+				<h3>More About {{post_category}}</h3>
+				<p>
+					<a href="#" class="subdued"> {{ post_commentCount }} Comments</a>
+					<a href="#" class="subdued"> {{ post_views }} Views</a>
+				</p>
+			</div>
+
+			<div class="item tabs tabs-secondary tabs-icon-left">
+				<a class="tab-item" href="#">
+			      <i class="icon ion-thumbsup"></i>
+			      Like
+			    </a>
+			    <a class="tab-item" href="#" >
+			      <i class="icon ion-chatbox"></i>
+			      Comment
+			    </a>
+			    <a class="tab-item" ng-click="Share();">
+			      <i class="icon ion-share"></i>
+			      Share
+			    </a>
+			</div>
+	</ion-content>
+
+</ion-view>

@@ -1,0 +1,16 @@
+/* Empty. Add your own CSS if you like */
+
+#big-header-logo{width:110px;height:auto;margin-bottom: 15px; margin-left: 80px; display:block;padding-top:20px;}
+#img_slide{
+-webkit-box-shadow: inset 2px -174px 101px 41px rgba(0,0,0,1);
+-moz-box-shadow: inset 2px -174px 101px 41px rgba(0,0,0,1);
+box-shadow: inset 2px -174px 101px 41px rgba(0,0,0,1);
+}
+#title-in-slide{ position: absolute; margin-top: -25%; color:#fff; font-family: khmer OS; padding: 1%;}
+#date-in-slide{ position: absolute; margin-top: -30px; color:#fff; text-align: center; font-family: khmer OS; float: left; padding-left: 5px;}
+#cate-in-slide{ position: absolute; margin-top: -30px; color:#fff; text-align: right; font-family: khmer OS; width: 100%;
+float: right; padding-right: 5px;}
+#date-in-slide-detail{ position: relative; margin-top: -10px; text-align: center; font-family: khmer OS; width: 150px; float: left; color:#757575;}
+#cate-in-slide-detail{ position: absolute; margin-top: -10px; text-align: right; font-family: khmer OS; width: 600px;
+float: right; color:#757575;}
+#title{font-size: 17px; font-weight: 600;}
