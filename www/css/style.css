@@ -33,3 +33,8 @@ float: right; padding-right: 5px;}
     height: 30px;
     float: right;
 }
+
+.more_news_related{
+    font-weight: bold;
+    padding-left: 4%;
+}

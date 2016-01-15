@@ -22,13 +22,13 @@
 	  	</ion-refresher>
 		<ion-list class="list" can-swipe="true">
 
-			<ion-item class="item item-thumbnail-left item-text-wrap item-icon-right" href="#/main/postDetail/{{post.id}}" ng-repeat="post in favorite_posts | filter: {title:searchText}">
+			<ion-item class="item item-thumbnail-left item-text-wrap item-icon-right" href="#/main/postDetail/{{post.id}}" ng-repeat="post in favorite_posts">
 		      <img ng-src="{{post.thumbnail}}">
 		      <h2>{{post.title}}</h2>
 		      <p ng-bind-html="post.excerpt | limitTo: 100"></p>
-		      <button class="button icon ion-heart button-clear" ng-class="{'button-positive':post.isFavorite}"></button>
+		      <button class="button icon ion-bookmark button-clear" ng-class="{'button-positive':post.isFavorite}"></button>
 		      <ion-option-button class="button-dark" ng-click="toggleFavorite(post)">
-		      	<i class="icon ion-heart"></i>
+		      	<i class="icon ion-bookmark"></i>
 			  </ion-option-button>
 		    </ion-item>
 		    

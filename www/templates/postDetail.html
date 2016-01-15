@@ -10,25 +10,20 @@
 	</ion-nav-bar>
 
 	<ion-header-bar class="bar bar-positive">
-		<!-- <div class="row responsive-sm .responsive-md .responsive-lg"> -->
-			<!-- <div class="col-40"> -->
 				<div class="title">{{ post_category }}</div>
-			<!-- </div>
-			<div class="col-60">-->
-				 <img ng-src="img/tnm-logo.png" class="advert-img" >
-			<!--</div> -->
-		<!-- </div> -->
-
-
 	</ion-header-bar>
+	<!-- Advertisement -->
+    <ion-nav-buttons side="right">
+           <img ng-src="img/tnm-logo.png" class="advert-img" >
+    </ion-nav-buttons>
+
 	<ion-content class="has-header" style="width:100% !important">
 			<img class="full-image" src="{{ post_image }}"/>
 			<div class="item item-body">
 				<h2 style="font-size: 20px; font-family: khmer OS;">{{ post_title }} </h2>
 				<p class="ion-clock" id="date-in-slide-detail"> {{post_date}}</p>
 				<p id="cate-in-slide-detail">{{post_category}}</p>
-				<p ng-bind-html="post_content"></p>
-				<h3>More About {{post_category}}</h3>
+				<p ng-bind-html="post_content"></p>			
 				<p><a href="#" class="subdued"> {{ post_commentCount }} Comments</a>
 					<a href="#" class="subdued"> {{ post_views }} Views</a>
 				</p>
@@ -48,6 +43,7 @@
 			      Share
 			    </a>
 			</div>
+			<h5 class="more_news_related">ព័ត៍មានបន្ថែមទាក់ទងនឹង​ {{post_category}}</h5>
 	</ion-content>
 
 </ion-view>
