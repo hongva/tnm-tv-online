@@ -17,18 +17,31 @@
            <img ng-src="img/codingate_logo_white.png" class="advert-img" >
     </ion-nav-buttons>
 
-	<ion-content class="has-subheader">
+	<ion-content class="has-header">
 		<ion-refresher
 		    pulling-text="Pull to refresh..."
 		    on-refresh="doRefresh()">
 	  	</ion-refresher>
+	  	
+	    <ion-list class="list" can-swipe="true"> 
+            <ion-item class="item item-text-wrap item-icon-right" ng-repeat="post in category_posts " href="#/main/postDetail/{{post.id}}">
+				<h2 id="title">{{ post.title }}</h2>  
+					<div class="row">
+						<div class="col-1">	
+							<img class="menu-img" ng-src="{{ post.thumbnail }}"/>
+						</div>
+						<div class="col-99" style="margin-left:20%;">
+							<p ng-bind-html="post.excerpt | limitTo: 100"></p>
+							<h4 class="ion-clock" style="width: 135px; float: left; color:#757575;"> {{post.date}}</h4>
+							<h4 style="float: right; color:#757575;"> {{post.categories[0].title}}</h4>
 
-		<div class="list">
-			<a class="item item-thumbnail-left item-text-wrap" href="#/main/postDetail/{{post.id}}" ng-repeat="post in category_posts}">
-		      <img ng-src="{{post.thumbnail}}">
-		      <h2>{{post.title}}</h2>
-		      <p ng-bind-html="post.excerpt"></p>
-		    </a>
-	    </div>
+							<button class="button icon ion-bookmark button-clear" ng-class="{'button-assertive':post.isFavorite}"></button>
+							<ion-option-button class="button-dark" ng-click="toggleFavorite(post)">
+					      	<i class="icon ion-bookmark"></i>
+						    </ion-option-button>
+						</div>
+					</div> 
+			</ion-item>
+		</ion-list>
 	</ion-content>
 </ion-view>
