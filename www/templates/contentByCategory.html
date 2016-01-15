@@ -27,7 +27,7 @@
 		    on-refresh="doRefresh()">
 	  	</ion-refresher>
 		<div class="list">
-			<a class="item item-thumbnail-left item-text-wrap" href="#/main/postDetail/{{post.id}}" ng-repeat="post in category_posts | filter: {title:searchText}">
+			<a class="item item-thumbnail-left item-text-wrap" href="#/main/postDetail/{{post.id}}" ng-repeat="post in category_posts }">
 		      <img ng-src="{{post.thumbnail}}">
 		      <h2>{{post.title}}</h2>
 		      <p ng-bind-html="post.excerpt"></p>

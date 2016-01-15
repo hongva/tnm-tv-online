@@ -11,6 +11,25 @@ box-shadow: inset 2px -174px 101px 41px rgba(0,0,0,1);
 #cate-in-slide{ position: absolute; margin-top: -30px; color:#fff; text-align: right; font-family: khmer OS; width: 100%;
 float: right; padding-right: 5px;}
 #date-in-slide-detail{ position: relative; margin-top: -10px; text-align: center; font-family: khmer OS; width: 150px; float: left; color:#757575;}
-#cate-in-slide-detail{ position: absolute; margin-top: -10px; text-align: right; font-family: khmer OS; width: 600px;
-float: right; color:#757575;}
+#cate-in-slide-detail{ 
+    margin-top: -3%;
+    text-align: right;
+    font-family: khmer OS;
+    color: #757575;
+}
 #title{font-size: 17px; font-weight: 600;}
+.menu-img{
+	width: 200% !important;
+}
+.item-body p img{
+	max-width: 100% !important;
+	height: auto;
+}
+.item-body p{
+	text-align: justify;
+}
+.advert-img{
+	width: 100px;
+    height: 30px;
+    float: right;
+}

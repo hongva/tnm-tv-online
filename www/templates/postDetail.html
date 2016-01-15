@@ -3,14 +3,25 @@
 		<ion-nav-back-button></ion-nav-back-button>
 
 		<ion-nav-buttons side="left">
-			<button class="button button-icon button-clear ion-navicon" menu-toggle="left"></button>
+			<button class="button button-icon button-clear ion-navicon" menu-toggle="left">
+				
+			</button>
 		</ion-nav-buttons>
 	</ion-nav-bar>
 
 	<ion-header-bar class="bar bar-positive">
-		<div class="title"><center>{{ post_category }} </center></div>
+		<!-- <div class="row responsive-sm .responsive-md .responsive-lg"> -->
+			<!-- <div class="col-40"> -->
+				<div class="title">{{ post_category }}</div>
+			<!-- </div>
+			<div class="col-60">-->
+				 <img ng-src="img/tnm-logo.png" class="advert-img" >
+			<!--</div> -->
+		<!-- </div> -->
+
+
 	</ion-header-bar>
-	<ion-content class="has-header">
+	<ion-content class="has-header" style="width:100% !important">
 			<img class="full-image" src="{{ post_image }}"/>
 			<div class="item item-body">
 				<h2 style="font-size: 20px; font-family: khmer OS;">{{ post_title }} </h2>
@@ -18,8 +29,7 @@
 				<p id="cate-in-slide-detail">{{post_category}}</p>
 				<p ng-bind-html="post_content"></p>
 				<h3>More About {{post_category}}</h3>
-				<p>
-					<a href="#" class="subdued"> {{ post_commentCount }} Comments</a>
+				<p><a href="#" class="subdued"> {{ post_commentCount }} Comments</a>
 					<a href="#" class="subdued"> {{ post_views }} Views</a>
 				</p>
 			</div>
