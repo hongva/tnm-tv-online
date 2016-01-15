@@ -1,6 +1,6 @@
 angular.module('starter')
 
-.controller('MenuCtrl', function($http, $scope, $sce, $ionicScrollDelegate,$timeout){
+.controller('MenuCtrl', function($http, $scope, $sce, $ionicScrollDelegate){
 	
 	$scope.categories = [];
 	
@@ -31,7 +31,7 @@ angular.module('starter')
 			$scope.recent_posts = data.data.posts;
 			$scope.count_total = data.data.count_total;
 			$scope.recent_posts.forEach(function(element, index, array){
-				element.excerpt = element.excerpt.substr(0,100);
+				element.excerpt = element.excerpt.substr(0,110);
 				element.excerpt = element.excerpt + "... Read More";
 				element.excerpt = $sce.trustAsHtml(element.excerpt);
 				if($scope.Favorites.indexOf(element.id) != -1)
@@ -59,7 +59,7 @@ angular.module('starter')
 		$scope.recent_posts = data.data.posts;
 		$scope.count_total = data.data.count_total;
 		$scope.recent_posts.forEach(function(element, index, array){
-			element.excerpt = element.excerpt.substr(0,100);
+			element.excerpt = element.excerpt.substr(0,110);
 			element.excerpt = element.excerpt + "... Read More";
 			element.excerpt = $sce.trustAsHtml(element.excerpt);
 			if($scope.Favorites.indexOf(element.id) != -1)
@@ -91,7 +91,7 @@ angular.module('starter')
 	$scope.loadMore = function(){
 		
 		$scope.timer = new Date().getTime();
-		//console.log(new Date($scope.timer - $scope.lastTimer).getTime())
+		console.log(new Date($scope.timer - $scope.lastTimer).getTime())
 		if(new Date($scope.timer - $scope.lastTimer) > 5000)
 		{
 			$scope.lastTimer = new Date().getTime();
@@ -101,7 +101,7 @@ angular.module('starter')
 				$scope.count_total = data.data.count_total;
 
 				newPosts.forEach(function(element, index, array){
-					element.excerpt = element.excerpt.substr(0,100);
+					element.excerpt = element.excerpt.substr(0,110);
 					element.excerpt = element.excerpt + "... Read More";
 					element.excerpt = $sce.trustAsHtml(element.excerpt);
 				})
@@ -174,7 +174,7 @@ angular.module('starter')
 		function(data){
 			$scope.category_posts = data.data.posts;
 	        $scope.category_posts.forEach(function(element, index, array){
-	          element.excerpt = element.excerpt.substr(0,100);
+	          element.excerpt = element.excerpt.substr(0,110);
 	          element.excerpt = element.excerpt + '... Read More';
 	          element.excerpt = $sce.trustAsHtml(element.excerpt);
 	        })
@@ -204,7 +204,7 @@ angular.module('starter')
         if($scope.favorite_posts.length == $scope.Favorites.length)
         {
           $scope.favorite_posts.forEach(function(post, position, list){
-            post.excerpt = post.excerpt.substr(0,100);
+            post.excerpt = post.excerpt.substr(0,110);
             post.excerpt = post.excerpt + '... Read More';
             post.excerpt = $sce.trustAsHtml(post.excerpt);
             

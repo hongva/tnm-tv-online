@@ -14,7 +14,7 @@
 		<div class="title"><center>TNM TV Online</center></div>
 	</ion-header-bar>
     <ion-nav-buttons side="right">
-           <img ng-src="img/tnm-logo.png" class="advert-img" >
+           <img ng-src="img/codingate_logo_white.png" class="advert-img" >
     </ion-nav-buttons>
 	<!--<div class="bar bar-subheader item-input-inset">
 		<label class="item-input-inset">
@@ -23,10 +23,9 @@
 		</label>
 	</div>-->
      
-    
+ 
 	<ion-content class="has-header" delegate-handle="mainScroll">
 			
- 
 		<ion-refresher
 		    pulling-text="Pull to refresh..."
 		    on-refresh="doRefresh()">
@@ -36,7 +35,7 @@
           <ion-slide ng-repeat="post in recently_posts" class="item-content">
             <img ng-src="{{post.thumbnail_images.td_341x220.url}}" class="full-image" /> 
             <h4 id="title-in-slide">{{ post.title }}</h4>
-            <h5 class="ion-clock" id="date-in-slide"> {{post.date}}</h5>
+            <h5 class="ion-clock" id="date-in-slide" > {{post.date}}</h5>
 		    <h5 id="cate-in-slide"> {{post.categories[0].title}}</h5>
           </ion-slide>
         </ion-slide-box>
@@ -68,4 +67,5 @@
 		    on-infinite="loadMore()" immediate-check="false">
 	  	</ion-infinite-scroll>
 	</ion-content>
+	
 </ion-view>
