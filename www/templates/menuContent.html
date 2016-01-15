@@ -1,21 +1,20 @@
 <ion-view>
 	<ion-nav-bar class="bar-assertive">
 		<ion-nav-buttons side="left">
-			<button class="button button-icon button-clear ion-navicon" menu-toggle="left"></button>
+			<button menu-toggle="left" class="button button-icon icon ion-navicon"></button>
 		</ion-nav-buttons>
 
-		<!--<ion-nav-buttons side="right">
-			<button class="button button-icon button-clear ion-bookmark" ui-sref="main.favorites">
-			</button>
-		</ion-nav-buttons>-->
+		<ion-nav-buttons side="right">
+           <a href="http://www.codingate.com/">
+             <img ng-src="img/codingate_logo_white.png" class="advert-img" >
+           </a>
+        </ion-nav-buttons>
 	</ion-nav-bar>
 
 	<ion-header-bar class="bar bar-positive">
 		<div class="title"><center>TNM TV Online</center></div>
 	</ion-header-bar>
-    <ion-nav-buttons side="right">
-           <img ng-src="img/codingate_logo_white.png" class="advert-img" >
-    </ion-nav-buttons>
+    
 	<!--<div class="bar bar-subheader item-input-inset">
 		<label class="item-input-inset">
 			<i class="icon ion-ios-search placeholder-icon"></i>
@@ -67,5 +66,5 @@
 		    on-infinite="loadMore()" immediate-check="false">
 	  	</ion-infinite-scroll>
 	</ion-content>
-	
+
 </ion-view>

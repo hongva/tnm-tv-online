@@ -38,3 +38,4 @@ float: right; padding-right: 5px;}
     font-weight: bold;
     padding-left: 4%;
 }
+.pane { position: absolute !important; }

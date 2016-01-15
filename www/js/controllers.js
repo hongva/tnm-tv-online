@@ -6,7 +6,6 @@ angular.module('starter')
 	
 	$http.get("http://ctv8.codingate.net/rest/get_category_index/").then(
 		function(returnedData){
-
 			$scope.categories = returnedData.data.categories;
 			$scope.categories.forEach(function(element, index, array){
 				element.title = $sce.trustAsHtml(element.title);

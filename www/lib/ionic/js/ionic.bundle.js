@@ -7361,7 +7361,7 @@ ionic.scroll = {
     this.canSwipe = opts.canSwipe;
   };
 
-  SlideDrag.prototype = new DragOp();
+  //SlideDrag.prototype = new DragOp();
 
   SlideDrag.prototype.start = function(e) {
     var content, buttons, offsetX, buttonsWidth;
@@ -56825,9 +56825,9 @@ IonicModule
       $scope.$on('$ionicView.beforeEnter', function(ev, viewData) {
         if (viewData.enableBack) {
           var sideMenuCtrl = $element.inheritedData('$ionSideMenusController');
-          if (!sideMenuCtrl.enableMenuWithBackViews()) {
+          /*if (!sideMenuCtrl.enableMenuWithBackViews()) {
             $element.addClass('hide');
-          }
+          }*/
         } else {
           $element.removeClass('hide');
         }
@@ -58022,10 +58022,10 @@ function($timeout, $ionicGesture, $window) {
         function onDragX(e) {
           if (!sideMenuCtrl.isDraggableTarget(e)) return;
 
-          if (getPrimaryScrollAxis(e) == 'x') {
+          /*if (getPrimaryScrollAxis(e) == 'x') {
             sideMenuCtrl._handleDrag(e);
             e.gesture.srcEvent.preventDefault();
-          }
+          }*/
         }
 
         function onDragY(e) {
@@ -58409,7 +58409,7 @@ function($timeout, $compile, $ionicSlideBoxDelegate, $ionicHistory, $ionicScroll
       };
 
       this.onPagerClick = function(index) {
-        void 0;
+        void 1;
         $scope.pagerClick({index: index});
       };
 
@@ -58463,7 +58463,7 @@ function($timeout, $compile, $ionicSlideBoxDelegate, $ionicHistory, $ionicScroll
     restrict: 'E',
     replace: true,
     require: '^ionSlideBox',
-    template: '<div class="slider-pager"><span class="slider-pager-page" ng-repeat="slide in numSlides() track by $index" ng-class="{active: $index == currentSlide}" ng-click="pagerClick($index)"><i class="icon ion-record"></i></span></div>',
+    template: '<div class="slider-pager"><span class="slider-pager-page" ng-repeat="slide in numSlides() track by $index" ng-class="{active: $index == currentSlide}" ng-click="pagerClick($index)"></span></div>',
     link: function($scope, $element, $attr, slideBox) {
       var selectPage = function(index) {
         var children = $element[0].children;
