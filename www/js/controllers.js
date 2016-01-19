@@ -1,5 +1,5 @@
 angular.module('starter')
-
+//Get Category For Menu
 .controller('MenuCtrl', function($http, $scope, $sce, $ionicScrollDelegate){
 	
 	$scope.categories = [];
@@ -12,9 +12,8 @@ angular.module('starter')
 		}, function(err){
 			console.log(err);
 	})
- 
 })
-	
+//Get Posts	
 .controller('MainCtrl', function($http, $scope,$filter, $sce, $ionicScrollDelegate,$ionicSlideBoxDelegate,$timeout, $localStorage, $ionicLoading){
 
 	$scope.offset = 0;
@@ -34,7 +33,7 @@ angular.module('starter')
 					element.isFavorite = true;
 				else
 					element.isFavorite = false;
-			})
+			});
 			
 			$scope.$broadcast('scroll.refreshComplete');
 
@@ -134,7 +133,7 @@ angular.module('starter')
 		$localStorage.Favorites = $scope.Favorites;
 	}
 })
-
+//Get Post Detail
 .controller('PostCtrl', function($scope, $http, $stateParams, $sce){
 	
 	$http.get('http://ctv8.codingate.net/rest/get_post/?id='+ $stateParams.postId).then(
@@ -157,11 +156,11 @@ angular.module('starter')
 		})
 
 	$scope.Share = function(){
-		window.plugins.socialsharing.share($scope.post_title, $scope.post_title, $scope.post_image, $scope.post_url);
+		window.plugins.socialsharing.share($scope.post_title, $scope.post_image, $scope.post_url);
 	}
 
 })
-
+//Get Category
 .controller('CatCtrl', function($http, $scope, $sce, $stateParams){
 	
 	$scope.doRefresh = function(){
@@ -184,8 +183,9 @@ angular.module('starter')
 	$scope.doRefresh();
 
 })
-
+//Get Favorite
 .controller('FavCtrl', function($http, $scope, $localStorage, $sce){
+
 	$scope.doRefresh = function(){
 
     $scope.Favorites = $localStorage.Favorites;
@@ -236,20 +236,6 @@ angular.module('starter')
         }
       })
     }
-
     $localStorage.Favorites = $scope.Favorites;
   }
-})
-
-.run(function($ionicPlatform) {
-  $ionicPlatform.ready(function() {
-    // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
-    // for form inputs)
-    if(window.cordova && window.cordova.plugins.Keyboard) {
-      cordova.plugins.Keyboard.hideKeyboardAccessoryBar(true);
-    }
-    if(window.StatusBar) {
-      StatusBar.styleDefault();
-    }
-  });
 })
