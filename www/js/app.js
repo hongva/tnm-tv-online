@@ -44,6 +44,10 @@ angular.module('starter', ['ionic', 'ngStorage'])
       url: '/favorites',
       templateUrl: 'templates/favorites.html',
       controller: 'FavCtrl'
+    })
+    .state('main.about',{
+      url: '/about',
+      templateUrl: 'templates/about.html'
     });
 
     $urlRouterProvider.otherwise('/main/contentRecent');
