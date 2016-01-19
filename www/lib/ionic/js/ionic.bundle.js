@@ -8342,7 +8342,7 @@ ionic.views.Slider = ionic.views.View.inherit({
 
         // measure start values
         start = {
-
+          
           // get initial touch coords
           x: touches.pageX,
           y: touches.pageY,
@@ -8550,12 +8550,12 @@ ionic.views.Slider = ionic.views.View.inherit({
       if (arguments.length) {
         this.slideIsDisabled = !shouldEnable;
       }
-      return !this.slideIsDisabled;
+      //return !this.slideIsDisabled;
     };
 
     this.slide = this.select = function(to, speed) {
       // cancel slideshow
-      stop();
+     // stop();
 
       slide(to, speed);
     };
@@ -56825,9 +56825,9 @@ IonicModule
       $scope.$on('$ionicView.beforeEnter', function(ev, viewData) {
         if (viewData.enableBack) {
           var sideMenuCtrl = $element.inheritedData('$ionSideMenusController');
-          /*if (!sideMenuCtrl.enableMenuWithBackViews()) {
+          if (!sideMenuCtrl.enableMenuWithBackViews()) {
             $element.addClass('hide');
-          }*/
+          }
         } else {
           $element.removeClass('hide');
         }
@@ -58332,7 +58332,7 @@ function($timeout, $compile, $ionicSlideBoxDelegate, $ionicHistory, $ionicScroll
 
       var continuous = $scope.$eval($scope.doesContinue) === true;
       var shouldAutoPlay = isDefined($attrs.autoPlay) ? !!$scope.autoPlay : false;
-      var slideInterval = shouldAutoPlay ? $scope.$eval($scope.slideInterval) || 4000 : 0;
+      var slideInterval = shouldAutoPlay ? $scope.$eval($scope.slideInterval) || 5000 : 0;
 
       var slider = new ionic.views.Slider({
         el: $element[0],
@@ -58418,7 +58418,7 @@ function($timeout, $compile, $ionicSlideBoxDelegate, $ionicHistory, $ionicScroll
       });
     }],
     template: '<div class="slider">' +
-      '<div class="slider-slides" ng-transclude>' +
+      '<div class="slider-slides" ng-transclude style="width:3200 !important;">' +
       '</div>' +
     '</div>',
 

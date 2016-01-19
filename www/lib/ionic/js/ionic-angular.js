@@ -12561,7 +12561,7 @@ function($timeout, $compile, $ionicSlideBoxDelegate, $ionicHistory, $ionicScroll
       });
     }],
     template: '<div class="slider">' +
-      '<div class="slider-slides" ng-transclude>' +
+      '<div class="slider-slides" ng-transclude style="width:3200 !important;">' +
       '</div>' +
     '</div>',
 

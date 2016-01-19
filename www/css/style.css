@@ -1,23 +1,73 @@
 /* Empty. Add your own CSS if you like */
 
-#big-header-logo{width:110px;height:auto;margin-bottom: 15px; margin-left: 80px; display:block;padding-top:20px;}
-#img_slide{
--webkit-box-shadow: inset 2px -174px 101px 41px rgba(0,0,0,1);
--moz-box-shadow: inset 2px -174px 101px 41px rgba(0,0,0,1);
-box-shadow: inset 2px -174px 101px 41px rgba(0,0,0,1);
+#big-header-logo{
+    width:110px;
+    height:auto;
+    margin-bottom: 15px;
+     margin-left: 80px; 
+     display:block;
+     padding-top:20px;
+ }
+
+#shadow_slide::before{
+content: "";
+position: absolute;
+top: 0;
+bottom: 0;
+left: 0;
+right: 0;
+-webkit-box-shadow: inset 0px -122px 179px -27px rgba(0,0,0,0.77);
+-moz-box-shadow: inset 0px -122px 179px -27px rgba(0,0,0,0.77);
+box-shadow: inset 0px -122px 179px -27px rgba(0,0,0,0.77);
 }
-#title-in-slide{ position: absolute; margin-top: -25%; color:#fff; font-family: khmer OS; padding: 1%;}
-#date-in-slide{ position: absolute; margin-top: -30px; color:#fff; text-align: center; font-family: khmer OS; float: left; padding-left: 5px;}
-#cate-in-slide{ position: absolute; margin-top: -30px; color:#fff; text-align: right; font-family: khmer OS; width: 100%;
-float: right; padding-right: 5px;}
-#date-in-slide-detail{ position: relative; margin-top: -10px; text-align: center; font-family: khmer OS; width: 150px; float: left; color:#757575;}
+
+#title-in-slide{
+ position: absolute; 
+ margin-top: -33%; 
+ color:#fff; 
+ text-align: center; 
+ padding: 3%;
+ font-size: 23px;
+ font-weight: bold;
+ text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+}
+#date-in-slide{ 
+    position: absolute;
+    margin-top: -30px; 
+    color:#fff; 
+    text-align: center; 
+    font-family: khmer OS; 
+    float: left; 
+    padding-left: 5px;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+}
+#cate-in-slide{ 
+    position: absolute; 
+    margin-top: -30px; 
+    color:#fff; 
+    text-align: right; 
+    font-family: khmer OS; 
+    width: 100%;
+    float: right; 
+    padding-right: 5px;
+}
+#date-in-slide-detail{ 
+    position: absolute;
+    margin-top: -10px; 
+    text-align: center; 
+    font-family: Verdana, Geneva, sans-serif; 
+    float: left; 
+    color:#757575;}
 #cate-in-slide-detail{ 
     margin-top: -3%;
     text-align: right;
     font-family: khmer OS;
     color: #757575;
 }
-#title{font-size: 17px; font-weight: 600;}
+#title{
+    font-size: 23px; 
+    font-weight: 600;
+}
 .menu-img{
 	width: 200% !important;
 }
@@ -29,8 +79,7 @@ float: right; padding-right: 5px;}
 	text-align: justify;
 }
 .advert-img{
-	width: 110px;
-    height: 30px;
+	width: 100%;
     float: right;
 }
 
@@ -38,4 +87,9 @@ float: right; padding-right: 5px;}
     font-weight: bold;
     padding-left: 4%;
 }
-.pane { position: absolute !important; }
+.pane { 
+    position: absolute !important; 
+}
+p{
+    font-size: 16px !important;
+}

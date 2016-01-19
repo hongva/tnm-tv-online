@@ -46,15 +46,5 @@ angular.module('starter', ['ionic', 'ngStorage'])
       controller: 'FavCtrl'
     });
 
-  /*  .state('main.about', {
-       url: '/about',
-       views: {
-       'menuAbout': {
-       templateUrl: 'about.html',
-       controller:'AboutCtrl'
-           }
-       }
-    });*/
-    
     $urlRouterProvider.otherwise('/main/contentRecent');
 })

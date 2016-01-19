@@ -1,28 +1,19 @@
 <ion-view>
-	<ion-nav-bar class="bar-assertive">
+	<ion-nav-bar class="bar-positive">
 		<ion-nav-buttons side="left">
 			<button menu-toggle="left" class="button button-icon icon ion-navicon"></button>
 		</ion-nav-buttons>
 
 		<ion-nav-buttons side="right">
-           <a href="http://www.codingate.com/">
-             <img ng-src="img/codingate_logo_white.png" class="advert-img" >
+          <a href="http://www.codingate.com/">
+           <img ng-src="img/codingate_logo_white.png" class="advert-img" >
            </a>
         </ion-nav-buttons>
 	</ion-nav-bar>
-
-	<ion-header-bar class="bar bar-positive">
+    <ion-header-bar class="bar bar-positive" side="left">
 		<div class="title"><center>TNM TV Online</center></div>
 	</ion-header-bar>
-    
-	<!--<div class="bar bar-subheader item-input-inset">
-		<label class="item-input-inset">
-			<i class="icon ion-ios-search placeholder-icon"></i>
-			<input type="search" placeholder="Search..." ng-model="searchText" ng-change="searchTextChanged()"/>
-		</label>
-	</div>-->
      
- 
 	<ion-content class="has-header" delegate-handle="mainScroll">
 			
 		<ion-refresher
@@ -30,17 +21,18 @@
 		    on-refresh="doRefresh()">
 	  	</ion-refresher>
 
-        <ion-slide-box on-slide-changed="slideChanged($index)" auto-play="true" does-continue="true">
+        <ion-slide-box on-slide-changed="slideChanged($index)" auto-play="true">
           <ion-slide ng-repeat="post in recently_posts" class="item-content">
-            <img ng-src="{{post.thumbnail_images.td_341x220.url}}" class="full-image" /> 
-            <h4 id="title-in-slide">{{ post.title }}</h4>
-            <h5 class="ion-clock" id="date-in-slide" > {{post.date}}</h5>
+          <div id="shadow_slide">
+          	<img ng-src="{{post.thumbnail_images.td_341x220.url}}" class="full-image" id="image_shadow" /> 
+            <a href="#/main/postDetail/{{post.id}}"><h4 id="title-in-slide" >{{ post.title }}</h4></a>
+            <div><h5 class="ion-clock" id="date-in-slide"> {{post.date}}</h5></div>
 		    <h5 id="cate-in-slide"> {{post.categories[0].title}}</h5>
+          </div>
           </ion-slide>
         </ion-slide-box>
 
 	  	<ion-list can-swipe="true">
-
 			<ion-item class="item item-text-wrap item-icon-right" ng-repeat="post in recent_posts " href="#/main/postDetail/{{post.id}}">
 				<h2 id="title">{{ post.title }}</h2>  
 					<div class="row">
@@ -49,9 +41,8 @@
 						</div>
 						<div class="col-99" style="margin-left:20%;">
 							<p ng-bind-html="post.excerpt"></p>
-							<h4 class="ion-clock" style="width: 135px; float: left; color:#757575;"> {{post.date}}</h4>
+							<h4 class="ion-clock" style="float: left; color:#757575; font-family: Verdana, Geneva, sans-serif;"> {{post.date}}</h4>
 							<h4 style="float: right; color:#757575;"> {{post.categories[0].title}}</h4>
-
 							<button class="button icon ion-bookmark button-clear" ng-class="{'button-assertive':post.isFavorite}"></button>
 							<ion-option-button class="button-dark" ng-click="toggleFavorite(post)">
 								<i class="icon ion-bookmark"></i>

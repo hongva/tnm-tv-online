@@ -2,9 +2,9 @@
 	<ion-nav-bar class="bar-positive">
 		<ion-nav-back-button></ion-nav-back-button>
         
-		<ion-nav-buttons side="left">
+<!-- 		<ion-nav-buttons side="left">
 			<button class="button button-icon button-clear ion-navicon" menu-toggle="left"></button>
-		</ion-nav-buttons>
+		</ion-nav-buttons> -->
 	</ion-nav-bar>
 
 	<ion-header-bar class="bar bar-positive">
@@ -18,7 +18,7 @@
     </ion-nav-buttons>
 
 	<ion-content class="has-header" style="width:100% !important">
-			<img class="full-image" src="{{ post_image }}"/>
+			<img class="full-image" src="{{ post_image }}" id="image_shadow" />
 			<div class="item item-body">
 				<h2 style="font-size: 20px; font-family: khmer OS;">{{ post_title }} </h2>
 				<p class="ion-clock" id="date-in-slide-detail"> {{post_date}}</p>

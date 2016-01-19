@@ -7,18 +7,15 @@ angular.module('starter')
 	$http.get("http://ctv8.codingate.net/rest/get_category_index/").then(
 		function(returnedData){
 			$scope.categories = returnedData.data.categories;
-			$scope.categories.forEach(function(element, index, array){
-				element.title = $sce.trustAsHtml(element.title);
-			})
 			console.log(returnedData);
-
+         
 		}, function(err){
 			console.log(err);
 	})
  
 })
-
-.controller('MainCtrl', function($http, $scope, $sce, $ionicScrollDelegate,$timeout, $localStorage, $ionicLoading){
+	
+.controller('MainCtrl', function($http, $scope,$filter, $sce, $ionicScrollDelegate,$timeout, $localStorage, $ionicLoading){
 
 	$scope.offset = 0;
 	$scope.count_total = 1;

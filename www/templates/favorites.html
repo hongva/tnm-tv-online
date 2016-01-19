@@ -1,14 +1,17 @@
 <ion-view>
 	<ion-nav-bar class="bar-positive">
-      <ion-nav-back-button class="button-clear">
-	    <i class="ion-arrow-left-c"></i> Back
-	  </ion-nav-back-button>
-
-      
+	    <ion-nav-buttons side="left">
+	        <button class="button button-icon button-clear ion-navicon" menu-toggle="left"></button>
+	    </ion-nav-buttons>
     </ion-nav-bar>
+
 	<ion-header-bar class="bar bar-positive">
-		<div class="title"><center>Favorite Posts</center></div>
+		<div class="title">Favorite Posts</div>
 	</ion-header-bar>
+	<!-- Advertisement -->
+	<ion-nav-buttons side="right">
+           <img ng-src="img/codingate_logo_white.png" class="advert-img" >
+    </ion-nav-buttons>
 
 	<ion-content class="has-header">
 		<ion-refresher
