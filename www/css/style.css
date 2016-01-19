@@ -27,7 +27,7 @@ box-shadow: inset 0px -122px 179px -27px rgba(0,0,0,0.77);
  color:#fff; 
  text-align: center; 
  padding: 3%;
- font-size: 23px;
+ font-size: 19px;
  font-weight: bold;
  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
 }
@@ -65,11 +65,19 @@ box-shadow: inset 0px -122px 179px -27px rgba(0,0,0,0.77);
     color: #757575;
 }
 #title{
-    font-size: 23px; 
+    font-size: 19px; 
     font-weight: 600;
+    width: 115%;
 }
 .menu-img{
-	width: 200% !important;
+	width: 100% !important;
+}
+.content-menu{
+    width: 128% !important;
+    text-align: justify;
+}
+.abc div{
+    border:1px solid;
 }
 .item-body p img{
 	max-width: 100% !important;
