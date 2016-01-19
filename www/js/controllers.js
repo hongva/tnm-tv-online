@@ -186,7 +186,6 @@ angular.module('starter')
 })
 
 .controller('FavCtrl', function($http, $scope, $localStorage, $sce){
-
 	$scope.doRefresh = function(){
 
     $scope.Favorites = $localStorage.Favorites;

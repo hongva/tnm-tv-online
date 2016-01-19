@@ -38,15 +38,15 @@
 			  <ion-tab title="About" icon-on="ion-ios-information" icon-off="ion-ios-information-outline" menu-close ui-sref="main.about">
               <ion-nav-view name="about"></ion-nav-view>
 			  </ion-tab> -->
-			      <a class="tab-item active" menu-close  ui-sref="main.contentRecent">
+			      <a class="tab-item" menu-close  ui-sref="main.contentRecent" ng-init="activeButton = 'a'" ng-click="activeButton = 'a'" ng-class="{ 'active': activeButton === 'a' }">
 			        <i class="icon ion-home"></i>
 			        Home
 			      </a>
-			      <a class="tab-item" menu-close ui-sref="main.favorites">
+			      <a class="tab-item" menu-close ui-sref="main.favorites" ng-click="activeButton = 'b'" ng-class="{ 'active': activeButton === 'b' }">
 			        <i class="icon ion-star"></i>
 			        Favorites
 			      </a>
-			      <a class="tab-item" menu-close ui-sref="main.about">
+			      <a class="tab-item" menu-close ui-sref="main.about" ng-click="activeButton = 'c'" ng-class="{ 'active': activeButton === 'c' }">
 			        <i class="icon ion-information-circled"></i>
 			        About
 			      </a>
