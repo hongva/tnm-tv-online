@@ -31,11 +31,25 @@
 
 		<ion-footer-bar>
             <ion-tabs class="tabs-striped tabs-color-assertive tabs-icon-top">
-			  <ion-tab title="Home" icon-on="ion-ios-home" icon-off="ion-ios-home-outline" ui-sref="main.contentRecent"></ion-tab>
+			  <!-- <ion-tab title="Home" ui-sref="main.contentRecent">
+			  	<i class="icon ion-home"></i>
+			  </ion-tab>
 			  <ion-tab title="Favorite" icon-on="ion-ios-bookmarks" icon-off="ion-ios-bookmarks-outline" menu-close ui-sref="main.favorites"></ion-tab>
 			  <ion-tab title="About" icon-on="ion-ios-information" icon-off="ion-ios-information-outline" menu-close ui-sref="main.about">
               <ion-nav-view name="about"></ion-nav-view>
-			  </ion-tab>
+			  </ion-tab> -->
+			      <a class="tab-item active" menu-close  ui-sref="main.contentRecent">
+			        <i class="icon ion-home"></i>
+			        Home
+			      </a>
+			      <a class="tab-item" menu-close ui-sref="main.favorites">
+			        <i class="icon ion-star"></i>
+			        Favorites
+			      </a>
+			      <a class="tab-item" menu-close ui-sref="main.about">
+			        <i class="icon ion-information-circled"></i>
+			        About
+			      </a>
 			</ion-tabs>
 			
 		</ion-footer-bar>
