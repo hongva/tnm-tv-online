@@ -58340,7 +58340,7 @@ function($timeout, $compile, $ionicSlideBoxDelegate, $ionicHistory, $ionicScroll
         continuous: continuous,
         startSlide: $scope.activeSlide,
         slidesChanged: function() {
-          $scope.currentSlide = slider.currentIndex();
+          $scope.currentSlide = slider.update();
 
           // Try to trigger a digest
           $timeout(function() {});

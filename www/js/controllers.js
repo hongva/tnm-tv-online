@@ -15,11 +15,11 @@ angular.module('starter')
  
 })
 	
-.controller('MainCtrl', function($http, $scope,$filter, $sce, $ionicScrollDelegate,$timeout, $localStorage, $ionicLoading){
+.controller('MainCtrl', function($http, $scope,$filter, $sce, $ionicScrollDelegate,$ionicSlideBoxDelegate,$timeout, $localStorage, $ionicLoading){
 
 	$scope.offset = 0;
 	$scope.count_total = 1;
-
+    
 	$scope.doRefresh = function(){
 		$scope.recent_posts = [];
 		$http.get("http://ctv8.codingate.net/rest/get_posts/").then(function(data){
@@ -42,7 +42,6 @@ angular.module('starter')
 
 		})
 	}
-   
 
 	$scope.Favorites = $localStorage.Favorites;
 	if(!$scope.Favorites)
@@ -241,4 +240,17 @@ angular.module('starter')
 
     $localStorage.Favorites = $scope.Favorites;
   }
+})
+
+.run(function($ionicPlatform) {
+  $ionicPlatform.ready(function() {
+    // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
+    // for form inputs)
+    if(window.cordova && window.cordova.plugins.Keyboard) {
+      cordova.plugins.Keyboard.hideKeyboardAccessoryBar(true);
+    }
+    if(window.StatusBar) {
+      StatusBar.styleDefault();
+    }
+  });
 })
