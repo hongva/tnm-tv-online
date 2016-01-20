@@ -13,7 +13,7 @@
 	</ion-nav-bar>
 
     <ion-header-bar class="bar bar-positive" side="left">
-		<div class="title"><center>TNM TV Online</center></div>
+		<div class="title"><center>TNM Hot News</center></div>
 	</ion-header-bar>
      
 	<ion-content class="has-header" delegate-handle="mainScroll">
@@ -43,18 +43,19 @@
 						</div>
 						<div class="col-60" style="margin-left:5%;">
 							<p class="content-menu" ng-bind-html="post.excerpt"></p>
-							<ion-option-button class="button-dark" ng-click="toggleFavorite(post)">
-								<i class="icon ion-bookmark"></i>
-							</ion-option-button>
+							
 						</div>
+						<ion-option-button class="button-dark" ng-click="toggleFavorite(post)">
+								<i class="icon ion-bookmark"></i>
+						</ion-option-button>
 					</div>
-					<div class="row">
+					<div class="row" style="">
 					   <div class="col-50">
                      	 <h4 class="ion-clock" style="color:#757575; font-family: Verdana, Geneva, sans-serif;"> {{post.date}}</h4>
                        </div>
                        <div class="col-50">
                        <h4 style="float:right; color:#757575;"> {{post.categories[0].title}}</h4>
-                       <div style="float:right;margin-top:-7%;" class="button icon ion-bookmark button-clear" ng-class="{'button-assertive':post.isFavorite}"></div>
+                       <div style="float:right;margin-top:-10px;" class="button icon ion-bookmark button-clear" ng-class="{'button-assertive':post.isFavorite}"></div>
                        
                       </div>
 					</div>  

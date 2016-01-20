@@ -67,14 +67,18 @@ box-shadow: inset 0px -122px 179px -27px rgba(0,0,0,0.77);
 #title{
     font-size: 19px; 
     font-weight: 600;
-    width: 105%;
+    width: 100%;
+}
+.title center{
+    font-size: 19px; 
+    font-weight: 600;
+    margin-top: -3px;
 }
 .menu-img{
 	width: 100% !important;
 }
 .content-menu{
-    width: 105% !important;
-    text-align: justify;
+    max-width: 96% !important;
 }
 .abc div{
     border:1px solid;
@@ -84,7 +88,7 @@ box-shadow: inset 0px -122px 179px -27px rgba(0,0,0,0.77);
 	height: auto;
 }
 .item-body p{
-	text-align: justify;
+	text-align: left;
 }
 .advert-img{
 	width: 100%;
