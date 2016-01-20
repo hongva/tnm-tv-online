@@ -1,5 +1,5 @@
 angular.module('starter')
-
+//Get Category For Menu
 .controller('MenuCtrl', function($http, $scope, $sce, $ionicScrollDelegate){
 	
 	$scope.categories = [];
@@ -15,16 +15,15 @@ angular.module('starter')
 		})
 	});*/
 
-	$http.get("http://ctv8.codingate.net/rest/get_category_index/").then(
+	$http.get("http://tnmasia.com/json/get_category_index/").then(
 		function(returnedData){
 			$scope.categories = returnedData.data.categories;
 			console.log(returnedData);
 		}, function(err){
 			console.log(err);
 	})
- 
 })
-	
+//Get Posts	
 .controller('MainCtrl', function($http, $scope,$filter, $sce, $ionicScrollDelegate,$ionicSlideBoxDelegate,$timeout, $localStorage, $ionicLoading){
 
 	$scope.offset = 0;
@@ -32,7 +31,7 @@ angular.module('starter')
     
 	$scope.doRefresh = function(){
 		$scope.recent_posts = [];
-		$http.get("http://ctv8.codingate.net/rest/get_posts/").then(function(data){
+		$http.get("http://tnmasia.com/json/get_posts/").then(function(data){
 			console.log(data);
 			$scope.recent_posts = data.data.posts;
 			$scope.count_total = data.data.count_total;
@@ -44,7 +43,7 @@ angular.module('starter')
 					element.isFavorite = true;
 				else
 					element.isFavorite = false;
-			})
+			});
 			
 			$scope.$broadcast('scroll.refreshComplete');
 
@@ -59,7 +58,7 @@ angular.module('starter')
 
 	$scope.recent_posts = [];
 
-	$http.get("http://ctv8.codingate.net/rest/get_posts/").then(function(data){
+	$http.get("http://tnmasia.com/json/get_posts/").then(function(data){
 		console.log(data);
 		$scope.recent_posts = data.data.posts;
 		$scope.count_total = data.data.count_total;
@@ -77,7 +76,7 @@ angular.module('starter')
 	})
  //get data recently post for slideshow
     $scope.recently_posts = [];
-	$http.get("http://ctv8.codingate.net/rest/get_recent_posts/").then(function(data){
+	$http.get("http://tnmasia.com/json/get_recent_posts/").then(function(data){
 		console.log(data);
 		$scope.recently_posts = data.data.posts;
 	}, function(err){
@@ -100,7 +99,7 @@ angular.module('starter')
 		if(new Date($scope.timer - $scope.lastTimer) > 5000)
 		{
 			$scope.lastTimer = new Date().getTime();
-			$http.get("http://ctv8.codingate.net/rest/get_posts/?offset="+$scope.offset)
+			$http.get("http://tnmasia.com/json/get_posts/?offset="+$scope.offset)
 			.then(function(data){
 				var newPosts = data.data.posts;
 				$scope.count_total = data.data.count_total;
@@ -144,10 +143,10 @@ angular.module('starter')
 		$localStorage.Favorites = $scope.Favorites;
 	}
 })
-
+//Get Post Detail
 .controller('PostCtrl', function($scope, $http, $stateParams, $sce){
 	
-	$http.get('http://ctv8.codingate.net/rest/get_post/?id='+ $stateParams.postId).then(
+	$http.get('http://tnmasia.com/json/get_post/?id='+ $stateParams.postId).then(
 		function(data){
 			$scope.post_title = data.data.post.title;
 			$scope.post_category = data.data.post.categories[0].title ? data.data.post.categories[0]
@@ -167,15 +166,15 @@ angular.module('starter')
 		})
 
 	$scope.Share = function(){
-		window.plugins.socialsharing.share($scope.post_title, $scope.post_title, $scope.post_image, $scope.post_url);
+		window.plugins.socialsharing.share($scope.post_title, $scope.post_image, $scope.post_url);
 	}
 
 })
-
+//Get Category
 .controller('CatCtrl', function($http, $scope, $sce, $stateParams){
 	
 	$scope.doRefresh = function(){
-		$http.get('http://ctv8.codingate.net/rest/get_category_posts/?id=' + $stateParams.catId).then(
+		$http.get('http://tnmasia.com/json/get_category_posts/?id=' + $stateParams.catId).then(
 		function(data){
 			$scope.category_posts = data.data.posts;
 	        $scope.category_posts.forEach(function(element, index, array){
@@ -194,14 +193,15 @@ angular.module('starter')
 	$scope.doRefresh();
 
 })
-
+//Get Favorite
 .controller('FavCtrl', function($http, $scope, $localStorage, $sce){
+
 	$scope.doRefresh = function(){
 
     $scope.Favorites = $localStorage.Favorites;
     $scope.favorite_posts = [];
     $scope.Favorites.forEach(function(element, index, array){
-      $http.get('http://ctv8.codingate.net/rest/get_post/?id='+element)
+      $http.get('http://tnmasia.com/json/get_post/?id='+element)
       .success(function(data){
         $scope.favorite_posts.push(data.post);
 
@@ -246,20 +246,6 @@ angular.module('starter')
         }
       })
     }
-
     $localStorage.Favorites = $scope.Favorites;
   }
-})
-
-.run(function($ionicPlatform) {
-  $ionicPlatform.ready(function() {
-    // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
-    // for form inputs)
-    if(window.cordova && window.cordova.plugins.Keyboard) {
-      cordova.plugins.Keyboard.hideKeyboardAccessoryBar(true);
-    }
-    if(window.StatusBar) {
-      StatusBar.styleDefault();
-    }
-  });
 })
