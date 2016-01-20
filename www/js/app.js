@@ -15,7 +15,13 @@ angular.module('starter', ['ionic', 'ngStorage'])
     if(window.StatusBar) {
       StatusBar.styleDefault();
     }
+    //var androidConfig = {"senderID":"474891394626"};
   });
+  /*$cordovaPush.register(androidConfig).then(function(result){
+    alert(result);
+  },function(err){
+    alert(err);
+  })*/
 })
 
 .config(function($stateProvider, $urlRouterProvider){

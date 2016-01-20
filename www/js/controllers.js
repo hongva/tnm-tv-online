@@ -3,12 +3,22 @@ angular.module('starter')
 .controller('MenuCtrl', function($http, $scope, $sce, $ionicScrollDelegate){
 	
 	$scope.categories = [];
-	
+	/*$rootScope.$on('$cordovaPush:notificationReceived',function(event, notification){
+		alert("result:"+JSON.stringify(notification));
+		var googleDevToken = notification.regid;
+		var data ={};
+		data.os ='Android';
+		data.token = googleDevToken;
+		$http({
+			method:'POST',
+			url:'http://'
+		})
+	});*/
+
 	$http.get("http://ctv8.codingate.net/rest/get_category_index/").then(
 		function(returnedData){
 			$scope.categories = returnedData.data.categories;
 			console.log(returnedData);
-         
 		}, function(err){
 			console.log(err);
 	})
