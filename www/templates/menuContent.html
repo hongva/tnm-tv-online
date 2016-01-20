@@ -41,7 +41,7 @@
 						<div class="col-25">	
 							<img class="menu-img" ng-src="{{ post.thumbnail }}"/>
 						</div>
-						<div class="col-70" style="margin-left:5%;">
+						<div class="col-60" style="margin-left:5%;">
 							<p class="content-menu" ng-bind-html="post.excerpt"></p>
 							<ion-option-button class="button-dark" ng-click="toggleFavorite(post)">
 								<i class="icon ion-bookmark"></i>
@@ -49,12 +49,12 @@
 						</div>
 					</div>
 					<div class="row">
-					   <div class="col-60">
+					   <div class="col-50">
                      	 <h4 class="ion-clock" style="color:#757575; font-family: Verdana, Geneva, sans-serif;"> {{post.date}}</h4>
                        </div>
-                       <div class="col-40">
+                       <div class="col-50">
                        <h4 style="float:right; color:#757575;"> {{post.categories[0].title}}</h4>
-                       <button style="margin-top:-10%;" class="button icon ion-bookmark button-clear" ng-class="{'button-assertive':post.isFavorite}"></button>
+                       <div style="float:right;margin-top:-7%;" class="button icon ion-bookmark button-clear" ng-class="{'button-assertive':post.isFavorite}"></div>
                        
                       </div>
 					</div>  

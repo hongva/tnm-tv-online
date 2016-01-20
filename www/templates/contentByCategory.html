@@ -19,13 +19,14 @@
 		    pulling-text="Pull to refresh..."
 		    on-refresh="doRefresh()">
 	  	</ion-refresher>
-		<ion-item class="item item-text-wrap" id="item_content" ng-repeat="post in category_posts " href="#/main/postDetail/{{post.id}}">
+		<ion-list can-swipe="true">
+			<ion-item class="item item-text-wrap" id="item_content"  ng-repeat="post in category_posts " href="#/main/postDetail/{{post.id}}">
 				<h2 id="title">{{ post.title }}</h2>  
 					<div class="row">
 						<div class="col-25">	
 							<img class="menu-img" ng-src="{{ post.thumbnail }}"/>
 						</div>
-						<div class="col-70" style="margin-left:5%;">
+						<div class="col-60" style="margin-left:5%;">
 							<p class="content-menu" ng-bind-html="post.excerpt"></p>
 							<ion-option-button class="button-dark" ng-click="toggleFavorite(post)">
 								<i class="icon ion-bookmark"></i>
@@ -33,19 +34,16 @@
 						</div>
 					</div>
 					<div class="row">
-						<div class="col-70">
-							<h4 class="ion-clock" style="float: left; color:#757575; font-family: Verdana, Geneva, sans-serif;"> {{post.date}}</h4>
-						</div>
-						<div class="col-40">
-							<h4 style="color:#757575;"> {{post.categories[0].title}}</h4>
-						</div>
-						<div class="col-10" >
-							<button class="button icon ion-bookmark button-clear" ng-class="{'button-assertive':post.isFavorite}">
-							</button>
-						</div>
-					</div>
-					
-				<br>
+					   <div class="col-50">
+                     	 <h4 class="ion-clock" style="color:#757575; font-family: Verdana, Geneva, sans-serif;"> {{post.date}}</h4>
+                       </div>
+                       <div class="col-50">
+                       <h4 style="float:right; color:#757575;"> {{post.categories[0].title}}</h4>
+                       <button style="float:right;margin-top:-7%;" class="button icon ion-bookmark button-clear" ng-class="{'button-assertive':post.isFavorite}"></button>
+                       
+                      </div>
+					</div>  
 			</ion-item>
+		</ion-list>
 	</ion-content>
 </ion-view>
