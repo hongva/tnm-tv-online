@@ -1,0 +1,20 @@
+{
+    "prepare_queue": {
+        "installed": [],
+        "uninstalled": []
+    },
+    "config_munge": {
+        "files": {}
+    },
+    "installed_plugins": {
+        "phonegap-facebook-plugin": {
+            "APP_ID": "1561459367511661",
+            "APP_NAME": "tnm-tv-online",
+            "PACKAGE_NAME": "com.ionicframework.wordpressionic435349"
+        },
+        "com.phonegap.plugins.PushPlugin": {
+            "PACKAGE_NAME": "com.ionicframework.wordpressionic435349"
+        }
+    },
+    "dependent_plugins": {}
+}

@@ -4,10 +4,10 @@
   <description>
         An Ionic Framework and Cordova project.
     </description>
-  <author email="hi@ionicframework" href="http://codingate.com/">
+  <author email="gmkimhong@gmail.com" href="http://codingate.com/">
       Codingate Team
     </author>
-   <allow-navigation href="*" />
+  <allow-navigation href="*"/>
   <content src="index.html"/>
   <access origin="*"/>
   <preference name="webviewbounce" value="false"/>

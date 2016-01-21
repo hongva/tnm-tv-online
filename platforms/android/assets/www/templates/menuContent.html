@@ -1,0 +1,69 @@
+
+<ion-view>
+	<ion-nav-bar class="bar-positive">
+		<ion-nav-buttons side="left">
+			<button menu-toggle="left" class="button button-icon icon ion-navicon"></button>
+		</ion-nav-buttons>
+
+		<ion-nav-buttons side="right">
+          <a href="http://www.codingate.com/">
+           <img ng-src="img/codingate_logo_white.png" class="advert-img" >
+           </a>
+        </ion-nav-buttons>
+	</ion-nav-bar>
+
+    <ion-header-bar class="bar bar-positive" side="left">
+		<div class="title" style="font-family:arial"><center>TNM Hot News</center></div>
+	</ion-header-bar>
+     
+	<ion-content class="has-header" delegate-handle="mainScroll">
+			
+		<ion-refresher
+		    pulling-text="Pull to refresh..."
+		    on-refresh="doRefresh()">
+	  	</ion-refresher>
+
+        <ion-slide-box on-slide-changed="slideChanged($index)" auto-play="true">
+          <ion-slide ng-repeat="post in recently_posts" class="item-content">
+          <div id="shadow_slide">
+          	<img ng-src="{{post.thumbnail_images.td_341x220.url}}" class="full-image" id="image_shadow" /> 
+            <a href="#/main/postDetail/{{post.id}}"><h4 id="title-in-slide" >{{ post.title }}</h4></a>
+            <div><h5 class="ion-clock" id="date-in-slide"> {{post.date}}</h5></div>
+		    <h5 id="cate-in-slide"> {{post.categories[0].title}}</h5>
+          </div>
+          </ion-slide>
+        </ion-slide-box>
+
+	  	<ion-list can-swipe="true">
+			<ion-item class="item item-text-wrap" id="item_content" ng-repeat="post in recent_posts " href="#/main/postDetail/{{post.id}}">
+				<h2 id="title">{{ post.title }}</h2>  
+					<div class="row">
+						<div class="col-25">	
+							<img class="menu-img" ng-src="{{ post.thumbnail }}"/>
+						</div>
+						<div class="col-60" style="margin-left:5%;">
+							<p class="content-menu" ng-bind-html="post.excerpt"></p>
+						</div>
+						<ion-option-button class="button-dark" ng-click="toggleFavorite(post)">
+								<i class="icon ion-bookmark"></i>
+						</ion-option-button>
+					</div>
+					<div class="row" style="width:95%;">
+					   <div class="col-50">
+                     	 <h4 class="ion-clock" style="font-family: Verdana, Geneva, sans-serif;"> {{post.date}}</h4>
+                       </div>
+                       <div class="col-50">
+                       <h4 style="float:right;font-family: khmerNewOs;"> {{post.categories[0].title}}</h4>
+                       <div style="float:right;margin-top:-10px;" class="button icon ion-bookmark button-clear" ng-class="{'button-assertive':post.isFavorite}"></div>
+                       
+                      </div>
+					</div>  
+			</ion-item>
+		</ion-list>
+
+		<ion-infinite-scroll ng-if="canLoadMore()"
+		    on-infinite="loadMore()" immediate-check="false">
+	  	</ion-infinite-scroll>
+	</ion-content>
+
+</ion-view>

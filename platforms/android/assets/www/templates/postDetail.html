@@ -1,0 +1,49 @@
+<ion-view>
+	<ion-nav-bar class="bar-positive">
+		<ion-nav-back-button></ion-nav-back-button>
+        
+<!-- 		<ion-nav-buttons side="left">
+			<button class="button button-icon button-clear ion-navicon" menu-toggle="left"></button>
+		</ion-nav-buttons> -->
+	</ion-nav-bar>
+
+	<ion-header-bar class="bar bar-positive">
+				<div class="title">{{ post_category }}</div>
+	</ion-header-bar>
+	<!-- Advertisement -->
+    <ion-nav-buttons side="right">
+          <a href="http://www.codingate.com/">
+           <img ng-src="img/codingate_logo_white.png" class="advert-img" >
+           </a>
+    </ion-nav-buttons>
+
+	<ion-content class="has-header" style="width:100% !important">
+			<img class="full-image" src="{{ post_image }}" id="image_shadow" />
+			<div class="item item-body">
+				<h2 style="font-size: 20px; font-family: khmer OS;font-weight: bold;">{{ post_title }} </h2>
+				<p class="ion-clock" id="date-in-slide-detail"> {{post_date}}</p>
+				<p id="cate-in-slide-detail">{{post_category}}</p>
+				<p ng-bind-html="post_content"></p>			
+				<p><a href="#" class="subdued"> {{ post_commentCount }} Comments</a>
+					<a href="#" class="subdued"> {{ post_views }} Views</a>
+				</p>
+			</div>
+
+			<div class="item tabs tabs-secondary tabs-icon-left">
+				<a class="tab-item" href="#">
+			      <i class="icon ion-thumbsup"></i>
+			      Like
+			    </a>
+			    <a class="tab-item" href="#" >
+			      <i class="icon ion-chatbox"></i>
+			      Comment
+			    </a>
+			    <a class="tab-item" ng-click="Share();">
+			      <i class="icon ion-share"></i>
+			      Share
+			    </a>
+			</div>
+			<!-- <h5 class="more_news_related">ព័ត៍មានបន្ថែមទាក់ទងនឹង​ {{post_category}}</h5> -->
+	</ion-content>
+
+</ion-view>

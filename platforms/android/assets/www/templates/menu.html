@@ -1,0 +1,51 @@
+<ion-side-menus enable-menu-with-back-views="true">
+	
+	<ion-side-menu-content>
+        <ion-nav-view></ion-nav-view>
+    </ion-side-menu-content>
+
+	<ion-side-menu side="left">
+		<ion-header-view></ion-header-view>
+		<ion-content class="menu-left">
+		    <ion-header-view>
+		    <a href="#/main/contentRecent"  menu-close>
+		    <img ng-src="img/tnm-logo.png" id="big-header-logo">
+            </a>
+	         <div class="bar bar-header item-input-inset">
+			  <label class="item-input-wrapper">
+			    
+			    <input type="search" placeholder="ស្វែងរក..." ng-model="searchText" ng-change="searchTextChanged()"/>
+			    <i class="icon ion-ios-search placeholder-icon"></i>
+			  </label>
+			  <button class="button button-small">បញ្ជូន</button>
+            </div>
+
+           </ion-header-view>
+
+			<ion-list style="font-weight: bold;">
+				<ion-item ng-repeat="category in categories" menu-close href="#/main/contentByCategory/{{category.id}}">
+					<span ng-bind-html="category.title"></span><span class="badge badge-assertive">{{ category.post_count }}</span>
+				</ion-item>
+			</ion-list>
+		</ion-content>
+
+		<ion-footer-bar>
+            <ion-tabs class="tabs-striped tabs-color-assertive tabs-icon-top">
+			      <a class="tab-item" menu-close  ui-sref="main.contentRecent" ng-init="activeButton = 'a'" ng-click="activeButton = 'a'" ng-class="{ 'active': activeButton === 'a' }">
+			        <i class="icon ion-home"></i>
+			        Home
+			      </a>
+			      <a class="tab-item" menu-close ui-sref="main.favorites" ng-click="activeButton = 'b'" ng-class="{ 'active': activeButton === 'b' }">
+			        <i class="icon ion-star"></i>
+			        Favorites
+			      </a>
+			      <a class="tab-item" menu-close ui-sref="main.about" ng-click="activeButton = 'c'" ng-class="{ 'active': activeButton === 'c' }">
+			        <i class="icon ion-information-circled"></i>
+			        About
+			      </a>
+			</ion-tabs>
+		</ion-footer-bar>
+
+	</ion-side-menu>
+
+</ion-side-menus>
