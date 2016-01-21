@@ -5,6 +5,7 @@
   font-weight: normal;
   font-style: normal; 
 }
+
 #big-header-logo{
     width:110px;
     height:auto;
@@ -28,6 +29,7 @@ box-shadow: inset 0px -122px 179px -27px rgba(0,0,0,0.77);
 
 #title-in-slide{
  position: absolute; 
+ font-family: khmerNewOs;
  bottom: 20px;
  color:#fff; 
  text-align: center; 
@@ -47,6 +49,7 @@ box-shadow: inset 0px -122px 179px -27px rgba(0,0,0,0.77);
 }
 #cate-in-slide{ 
     position: absolute; 
+    font-family: khmerNewOs;
     margin-top: -30px; 
     color:#fff; 
     text-align: right;  
@@ -65,9 +68,11 @@ box-shadow: inset 0px -122px 179px -27px rgba(0,0,0,0.77);
     margin-top: -3%;
     text-align: right;
     color: #757575;
+    font-family: khmerNewOs;
 }
 #title{
     font-size: 19px; 
+    font-family: khmerNewOs;
     font-weight: 600;
     font-family: arial;
     width: 100%;
@@ -82,9 +87,7 @@ box-shadow: inset 0px -122px 179px -27px rgba(0,0,0,0.77);
 }
 .content-menu{
     max-width: 96% !important;
-}
-.abc div{
-    border:1px solid;
+    font-family: khmerNewOs;
 }
 .item-body p img{
 	max-width: 100% !important;
@@ -92,6 +95,7 @@ box-shadow: inset 0px -122px 179px -27px rgba(0,0,0,0.77);
 }
 .item-body p{
 	text-align: left;
+    font-family: khmerNewOs;
 }
 .advert-img{
 	width: 100%;
@@ -112,8 +116,12 @@ p{
     width: 107%;
     margin-bottom: -20px;
     margin-top: -6px;
+
 }
-#post_excerpt{ width: 125%;}
+#post_excerpt{ 
+    width: 125%;
+    font-family: khmerNewOs;
+}
 .date-cate div h4{
     font-size: 10px;
     color:#757575; 
