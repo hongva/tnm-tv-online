@@ -1,27 +1,43 @@
 angular.module('starter')
 //Get Category For Menu
-.controller('MenuCtrl', function($http, $scope, $sce, $ionicScrollDelegate){
+.controller('MenuCtrl', function($http, $scope, $sce, $ionicScrollDelegate,$timeout,$rootScope){
 	
 	$scope.categories = [];
-	/*$rootScope.$on('$cordovaPush:notificationReceived',function(event, notification){
-		alert("result:"+JSON.stringify(notification));
-		var googleDevToken = notification.regid;
-		var data ={};
-		data.os ='Android';
-		data.token = googleDevToken;
-		$http({
-			method:'POST',
-			url:'http://'
-		})
-	});*/
+	
+	$rootScope.$on('$cordovaPush:notificationReceived', function(event, notification){
+		alert("result: " + JSON.stringify(notification));
+
+		  var googDevToken = notification.regid;
+	      
+	      var data = {};
+	      data.os = 'Android';
+	      data.token = googDevToken;
+	      $http({
+	          method  : 'POST',
+	          url     : 'http://tnmasia.com/',
+	          data    : 'os=Android&token='+googDevToken,
+	          headers : {'Content-Type': 'application/x-www-form-urlencoded'} 
+	         }).success(function(){
+	        alert('Sent to Lights & Shapes Server!!!');
+	      }).error(function(err){
+	        alert('Error while Sending!!!' + JSON.stringify(err));
+	      });
+
+	});
 
 	$http.get("http://tnmasia.com/json/get_category_index/").then(
 		function(returnedData){
+
 			$scope.categories = returnedData.data.categories;
+			$scope.categories.forEach(function(element, index, array){
+				element.title = $sce.trustAsHtml(element.title);
+			})
 			console.log(returnedData);
+
 		}, function(err){
 			console.log(err);
 	})
+
 })
 //Get Posts	
 .controller('MainCtrl', function($http, $scope,$filter, $sce, $ionicScrollDelegate,$ionicSlideBoxDelegate,$timeout, $localStorage, $ionicLoading){
@@ -37,7 +53,7 @@ angular.module('starter')
 			$scope.count_total = data.data.count_total;
 			$scope.recent_posts.forEach(function(element, index, array){
 				element.excerpt = element.excerpt.substr(0,110);
-				element.excerpt = element.excerpt + "... Read More";
+				element.excerpt = element.excerpt + "... ";
 				element.excerpt = $sce.trustAsHtml(element.excerpt);
 				if($scope.Favorites.indexOf(element.id) != -1)
 					element.isFavorite = true;
@@ -64,7 +80,7 @@ angular.module('starter')
 		$scope.count_total = data.data.count_total;
 		$scope.recent_posts.forEach(function(element, index, array){
 			element.excerpt = element.excerpt.substr(0,110);
-			element.excerpt = element.excerpt + "... Read More";
+			element.excerpt = element.excerpt + "... ";
 			element.excerpt = $sce.trustAsHtml(element.excerpt);
 			if($scope.Favorites.indexOf(element.id) != -1)
 				element.isFavorite = true;
@@ -106,7 +122,7 @@ angular.module('starter')
 
 				newPosts.forEach(function(element, index, array){
 					element.excerpt = element.excerpt.substr(0,110);
-					element.excerpt = element.excerpt + "... Read More";
+					element.excerpt = element.excerpt + "...";
 					element.excerpt = $sce.trustAsHtml(element.excerpt);
 				})
 
@@ -179,7 +195,7 @@ angular.module('starter')
 			$scope.category_posts = data.data.posts;
 	        $scope.category_posts.forEach(function(element, index, array){
 	          element.excerpt = element.excerpt.substr(0,110);
-	          element.excerpt = element.excerpt + '... Read More';
+	          element.excerpt = element.excerpt + '... ';
 	          element.excerpt = $sce.trustAsHtml(element.excerpt);
 	        })
 	        $scope.category_title = data.data.category.title;
@@ -209,7 +225,7 @@ angular.module('starter')
         {
           $scope.favorite_posts.forEach(function(post, position, list){
             post.excerpt = post.excerpt.substr(0,110);
-            post.excerpt = post.excerpt + '... Read More';
+            post.excerpt = post.excerpt + '... ';
             post.excerpt = $sce.trustAsHtml(post.excerpt);
             
             if($scope.Favorites.indexOf(post.id) != -1)
