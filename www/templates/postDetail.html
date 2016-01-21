@@ -20,8 +20,8 @@
 	<ion-content class="has-header" style="width:100% !important">
 			<img class="full-image" src="{{ post_image }}" id="image_shadow" />
 			<div class="item item-body">
-				<h2 style="font-size: 20px; font-family: khmer OS;">{{ post_title }} </h2>
-				<p class="ion-clock" id="date-in-slide-detail"> {{post_date |date: 'yyyy-MM-dd'}}</p>
+				<h2 style="font-size: 20px; font-family: khmer OS;font-weight: bold;">{{ post_title }} </h2>
+				<p class="ion-clock" id="date-in-slide-detail"> {{post_date}}</p>
 				<p id="cate-in-slide-detail">{{post_category}}</p>
 				<p ng-bind-html="post_content"></p>			
 				<p><a href="#" class="subdued"> {{ post_commentCount }} Comments</a>

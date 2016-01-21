@@ -6,7 +6,7 @@
 
 	<ion-side-menu side="left">
 		<ion-header-view></ion-header-view>
-		<ion-content>
+		<ion-content class="menu-left">
 		    <ion-header-view>
 		    <a href="#/main/contentRecent"  menu-close>
 		    <img ng-src="img/tnm-logo.png" id="big-header-logo">
@@ -22,7 +22,7 @@
 
            </ion-header-view>
 
-			<ion-list>
+			<ion-list style="font-weight: bold;">
 				<ion-item ng-repeat="category in categories" menu-close href="#/main/contentByCategory/{{category.id}}">
 					<span ng-bind-html="category.title"></span><span class="badge badge-assertive">{{ category.post_count }}</span>
 				</ion-item>

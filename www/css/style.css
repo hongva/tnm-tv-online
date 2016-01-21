@@ -63,21 +63,24 @@ box-shadow: inset 0px -122px 179px -27px rgba(0,0,0,0.77);
     text-align: center; 
     font-family: Verdana, Geneva, sans-serif; 
     float: left; 
-    color:#757575;}
+    color:#757575;
+    font-size: 14px !important;
+}
 #cate-in-slide-detail{ 
     margin-top: -3%;
     text-align: right;
     color: #757575;
     font-family: khmerNewOs;
+    font-size: 14px !important;
 }
 #title{
     font-size: 19px; 
-    font-family: khmerNewOs;
+    font-family: khmerNewOs , arial;
     font-weight: 600;
-    font-family: arial;
     width: 100%;
 }
 .title center{
+    font-family: khmerNewOs , arial;
     font-size: 19px; 
     font-weight: 600;
     margin-top: -3px;
@@ -126,4 +129,7 @@ p{
     font-size: 10px;
     color:#757575; 
     font-weight: bold;
+}
+.menu-left *{
+    font-family: khmerNewOs;
 }
