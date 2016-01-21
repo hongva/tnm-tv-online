@@ -32,16 +32,16 @@
 							</ion-option-button>
 						</div>
 					</div>
-					<div class="row" style="width:98%">
+					<div class="row date-cate" style="width:95%;">
 					   <div class="col-50">
-                     	 <h4 class="ion-clock" style="color:#757575; font-family: Verdana, Geneva, sans-serif;"> {{post.date}}</h4>
+                     	 <h4 class="ion-clock" style="font-family: Verdana, Geneva, sans-serif;"> {{post.date}}</h4>
                        </div>
                        <div class="col-50">
-                       <h4 style="float:right; color:#757575;"> {{post.categories[0].title}}</h4>
-                       <button style="float:right;margin-top:-10px;" class="button icon ion-bookmark button-clear" ng-class="{'button-assertive':post.isFavorite}"></button>
+                       <h4 style="float:right;"> {{post.categories[0].title}}</h4>
+                       <div style="float:right;margin-top:-10px;" class="button icon ion-bookmark button-clear" ng-class="{'button-assertive':post.isFavorite}"></div>
                        
                       </div>
-					</div>  
+					</div>    
 			</ion-item>
 		</ion-list>
 	</ion-content>
