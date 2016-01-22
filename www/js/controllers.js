@@ -177,6 +177,22 @@ angular.module('starter')
 		      $scope.post_commentCount = data.data.post.comment_count;
 		      $scope.post_views = data.data.post.custom_fields.post_views_count[0];
 		      $scope.post_url = data.data.post.url;
+		      $scope.post_id = data.data.post.id;
+		      $scope.cat_id = data.data.post.categories[0].id;
+		      $http.get('http://tnmasia.com/json/get_category_posts/?id=' + $scope.cat_id).then(
+				function(data){
+					$scope.category_posts = data.data.posts;
+			        $scope.category_posts.forEach(function(element, index, array){
+			          element.excerpt = element.excerpt.substr(0,110);
+			          element.excerpt = element.excerpt + '... ';
+			          element.excerpt = $sce.trustAsHtml(element.excerpt);
+			        })
+			        $scope.category_title = data.data.category.title;
+			        $scope.$broadcast('scroll.refreshComplete');
+			        
+				}, function(err){
+
+				})
 		}, function(err){
 
 		})

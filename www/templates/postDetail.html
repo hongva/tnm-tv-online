@@ -43,7 +43,32 @@
 			      Share
 			    </a>
 			</div>
-			<!-- <h5 class="more_news_related">ព័ត៍មានបន្ថែមទាក់ទងនឹង​ {{post_category}}</h5> -->
+			<h5 style="padding:10px" class="more_news_related">ព័ត៍មានបន្ថែមទាក់ទងនឹង​ {{post_category}}</h5>
+			<ion-item class="item item-text-wrap" id="item_content"  ng-repeat="post in category_posts | limitTo: 4 " ng-if="post_id != post.id" href="#/main/postDetail/{{post.id}}">
+				<h2 id="title">{{ post.title }}</h2>  
+					<div class="row">
+						<div class="col-25">	
+							<img class="menu-img" ng-src="{{ post.thumbnail }}"/>
+						</div>
+						<div class="col-60" style="margin-left:5%;">
+							<p class="content-menu" ng-bind-html="post.excerpt"></p>
+							<ion-option-button class="button-dark" ng-click="toggleFavorite(post)">
+								<i class="icon ion-bookmark"></i>
+							</ion-option-button>
+						</div>
+					</div>
+					<div class="row" style="width:95%;">
+					   <div class="col-50">
+                     	 <h4 class="ion-clock" style="font-family: Verdana, Geneva, sans-serif;"> {{post.date}}</h4>
+                       </div>
+                       <div class="col-50">
+                       <h4 style="float:right;font-family: khmerNewOs;"> {{post.categories[0].title}}</h4>
+                       <div style="float:right;margin-top:-10px;" class="button icon ion-bookmark button-clear" ng-class="{'button-assertive':post.isFavorite}"></div>
+                       
+                      </div>
+					</div>  
+                       
+			</ion-item>
 	</ion-content>
 
 </ion-view>
